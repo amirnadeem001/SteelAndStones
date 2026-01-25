@@ -1,0 +1,15 @@
+
+> printo@0.1.0 lint
+> eslint
+
+
+C:\Users\C Zone\Desktop\printo\app\contact\page.tsx
+  16:56  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  18:51  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\C Zone\Desktop\printo\app\page.tsx
+   7:3  warning  'ChevronRight' is defined but never used    @typescript-eslint/no-unused-vars
+  24:9  warning  'stats' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Γ£û 4 problems (2 errors, 2 warnings)
+
