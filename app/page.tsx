@@ -60,9 +60,9 @@ export default function LandingPage() {
               Interior Design
             </h1>
             
-            <p className="mb-12 text-lg md:text-xl leading-relaxed text-zinc-300 max-w-3xl font-medium">
-              Whether it&apos;s your home, office, or a commercial project, 
-              we are always dedicated to bringing your vision to life.
+            <p className="mb-12 text-lg md:text-xl leading-relaxed text-zinc-300 max-w-4xl font-medium">
+              To redefine spaces by blending strength and elegance, creating interiors <br className="hidden md:block" /> 
+              that inspire, endure, and elevate the experience of every home and office.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-6">
@@ -105,7 +105,7 @@ export default function LandingPage() {
               >
                 <div className="h-1.5 w-1.5 rounded-full bg-[#c5a47e]" />
                 <span className="text-[10px] font-black uppercase tracking-[0.25em] text-zinc-900">
-                  Who We Are
+                  Our Mission
                 </span>
               </motion.div>
               
@@ -114,7 +114,7 @@ export default function LandingPage() {
                 transition={{ delay: 0.1 }}
                 className="text-4xl sm:text-5xl md:text-[60px] font-bold leading-[1.1] text-zinc-900 tracking-tight"
               >
-                Experience <span className="text-[#c5a47e]">The Art Of Interior Design</span>
+                Exceptional Living And <span className="text-[#c5a47e]">Working Spaces</span>
               </motion.h2>
             </div>
             
@@ -124,9 +124,9 @@ export default function LandingPage() {
               className="max-w-md"
             >
               <p className="text-lg text-zinc-500 leading-relaxed font-medium">
-                We specialize in transforming visions into reality.
-                Explore our portfolio of innovative architectural and interior design projects 
-                crafted with precision.
+                We craft exceptional spaces through meticulous design, 
+                premium materials, and flawless execution. We are committed 
+                to delivering timeless elegance and unmatched quality.
               </p>
             </motion.div>
           </div>
@@ -134,23 +134,23 @@ export default function LandingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                title: "Architectural Design",
-                desc: "Dream it, we&apos;ll design it! From big picture layouts to the tiniest details, our architectural magic brings your ideas to life with creativity and precision!",
+                title: "Premium Craftsmanship",
+                desc: "Every project is executed with meticulous attention to detail, combining strength and elegance for a unique finish.",
                 icon: "📐"
               },
               {
-                title: "Interior Design & Planning",
-                desc: "Make your space shine! Our team creates inviting, beautiful interiors that reflect your style and make every room a favorite place to be.",
+                title: "Comprehensive Solutions",
+                desc: "From painting and woodwork to flooring, ceilings, and electrical work, we handle every aspect of interiors.",
                 icon: "🏠"
               },
               {
-                title: "Consulting Services",
-                desc: "Consider us your design whisperers! We provide expert advice to help your project sparkle with creativity, efficiency, and spot-on solutions.",
+                title: "Timeless Design",
+                desc: "We create spaces that are not only stylish but enduring, reflecting sophistication and comfort in every detail.",
                 icon: "💡"
               },
               {
-                title: "Project Management",
-                desc: "We handle the hustle! From start to finish, we keep your project on track, on budget, and stress-free - so you can sit back and watch the magic happen.",
+                title: "Innovative Approach",
+                desc: "We blend modern techniques with creative design concepts to deliver unique, functional interiors that inspire.",
                 icon: "📋"
               }
             ].map((service, idx) => (
@@ -294,7 +294,7 @@ export default function LandingPage() {
         {/* Background Watermark/Abstract */}
         <div className="absolute inset-0 z-0 pointer-events-none select-none flex items-center justify-center">
           <span className="text-[30vw] font-black text-white/[0.03] tracking-tighter uppercase whitespace-nowrap">
-            Antra Studio
+            Steel & Stone
           </span>
         </div>
 
@@ -321,10 +321,10 @@ export default function LandingPage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-12 mb-12">
                 {[
-                  "Latest Technologies",
-                  "5 Years Warranty",
-                  "High-Quality Designs",
-                  "Residential Design"
+                  "Premium Quality Materials",
+                  "Expert Craftsmanship",
+                  "Client-Centric Approach",
+                  "Timeless & Innovative"
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <CheckCircle2 className="text-[#c5a47e]" size={20} />
@@ -476,7 +476,7 @@ export default function LandingPage() {
               {
                 number: "01",
                 title: "Initial Consultation",
-                desc: "We begin by understanding your vision, goals, and needs, followed Antra.",
+                desc: "We begin by understanding your vision, goals, and needs, followed by careful planning.",
                 image: "/gallery-1.png",
                 offset: "lg:mt-0"
               },

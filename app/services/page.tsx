@@ -9,38 +9,38 @@ import { cn } from "@/lib/utils";
 const services = [
   { 
     id: "01", 
-    title: "Residential Interior Design", 
-    desc: "Tailored design services for private homes, including room makeovers and complete home transformations.",
+    title: "Premium Woodwork & Cabinetry", 
+    desc: "Custom-made woodwork and high-end cabinetry that adds character and functionality to any space.",
     image: "/modern-space.png"
   },
   { 
     id: "02", 
-    title: "Commercial Interior Design", 
-    desc: "Designing functional and attractive interiors for businesses, including offices, retail spaces, and restaurants.",
+    title: "Expert Painting & Refinishing", 
+    desc: "Professional painting services with meticulous attention to detail and high-quality finishes.",
     image: "/service.png"
   },
   { 
     id: "03", 
-    title: "Interior Design Consultation", 
-    desc: "Providing professional advice on concepts, color schemes & material selection.",
+    title: "Flooring & Tiling", 
+    desc: "A wide range of premium flooring solutions, from hardwood to luxury tiles, installed with precision.",
     image: "/gallery-3.png"
   },
   { 
     id: "04", 
-    title: "Outdoor & Landscape Design", 
-    desc: "Expertly designed outdoor spaces that complement your architecture and lifestyle.",
+    title: "Ceiling & Lighting Design", 
+    desc: "Innovative ceiling designs and integrated lighting solutions that transform the ambiance of your space.",
     image: "/gallery-2.png"
   },
   { 
     id: "05", 
-    title: "Renovation And Remodeling", 
-    desc: "Taking your existing space and turning it into something entirely new and beautiful.",
+    title: "Electrical & Smart Home", 
+    desc: "Seamless electrical work and smart home integrations for modern, functional interiors.",
     image: "/gallery-1.png"
   },
   { 
     id: "06", 
-    title: "Interior 2D/3D Layouts", 
-    desc: "Visualizing your space with precision through advanced modeling and professional layouts.",
+    title: "Full Interior Renovation", 
+    desc: "Comprehensive solutions handling every aspect from structural changes to the final decorative touches.",
     image: "/hero.png"
   }
 ];
@@ -122,8 +122,7 @@ export default function ServicesPage() {
                 transition={{ delay: 0.2 }}
                 className="max-w-2xl text-lg text-zinc-500 font-medium leading-relaxed"
               >
-                We specialize in transforming visions into reality. Explore our portfolio of 
-                innovative architectural and interior design projects crafted with precision.
+                From painting and woodwork to flooring, ceilings, and electrical work, we handle every aspect of interiors for homes and offices with meticulous attention to detail.
               </motion.p>
             </div>
           </div>

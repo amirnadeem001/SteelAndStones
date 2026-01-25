@@ -32,7 +32,7 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-2 mb-8">
               <Image
                 src={logo}
-                alt="Antra Logo"
+                alt="Steel & Stone Interiors Logo"
                 className="h-30 w-auto object-contain"
               />
             </Link>
@@ -96,7 +96,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-12 border-t border-white/10 flex flex-col md:row items-center justify-between gap-6 text-sm text-zinc-500 font-medium">
-          <p>© 2026 Antra Studio. All rights reserved.</p>
+          <p>© 2026 Steel & Stone Interiors. All rights reserved.</p>
           <div className="flex gap-8">
             <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>

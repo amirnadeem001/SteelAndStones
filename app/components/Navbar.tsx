@@ -21,6 +21,14 @@ export function Navbar() {
   const pathname = usePathname();
 
   useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = "hidden";
     } else {
@@ -32,8 +40,8 @@ export function Navbar() {
     <>
       <nav
         className={cn(
-          "fixed top-0 z-50 w-full px-6 py-5 transition-all duration-300",
-          isScrolled ? "bg-zinc-900/95 backdrop-blur-md shadow-lg" : "bg-transparent"
+          "fixed top-0 z-50 w-full px-6 py-4 transition-all duration-500",
+          isScrolled ? "bg-black/60 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] border-b border-white/5" : "bg-transparent"
         )}
       >
         <div className="mx-auto flex max-w-[2600px] items-center justify-between">
@@ -41,7 +49,7 @@ export function Navbar() {
           <Link href="/" className="flex items-center gap-2 group">
             <Image
               src={logo}
-              alt="Antra Logo"
+              alt="Steel & Stone Interiors Logo"
               className="h-14 md:h-24 lg:h-30 w-auto object-contain transition-all"
               priority
             />

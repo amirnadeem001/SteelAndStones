@@ -21,8 +21,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Antra | Luxury Interior Design Studio",
-  description: "Bespoke interior design services for luxury residential and commercial spaces.",
+  title: "Steel & Stone Interiors | Luxury Interior Design Studio",
+  description: "Bespoke interior design services blending strength and elegance for residential and commercial spaces.",
 };
 
 export default function RootLayout({
