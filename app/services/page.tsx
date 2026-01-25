@@ -56,7 +56,7 @@ export default function ServicesPage() {
   return (
     <div className="relative min-h-screen bg-white text-zinc-900 overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative h-[40vh] w-full flex items-center justify-center text-center">
+      <section className="relative h-[250px] sm:h-[350px] md:h-[40vh] w-full flex items-center justify-center text-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image
             src="/hero.png"
@@ -71,7 +71,7 @@ export default function ServicesPage() {
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-bold text-white mb-6 uppercase tracking-tighter"
+            className="text-3xl md:text-6xl font-bold text-white mb-4 uppercase tracking-tighter"
           >
             Services 01
           </motion.h1>
@@ -80,7 +80,7 @@ export default function ServicesPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="flex items-center justify-center gap-3 text-sm font-bold uppercase tracking-widest text-white/70"
+            className="flex items-center justify-center gap-3 text-[11px] sm:text-sm font-bold uppercase tracking-[0.2em] sm:tracking-widest text-white/70"
           >
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <ChevronRight size={14} className="text-white/30" />
@@ -112,9 +112,9 @@ export default function ServicesPage() {
               <motion.h2 
                 {...fadeIn}
                 transition={{ delay: 0.1 }}
-                className="text-3xl md:text-5xl font-bold leading-[1.1] text-zinc-900 mb-10"
+                className="text-4xl sm:text-5xl md:text-[60px] font-bold leading-[1.1] text-zinc-900 mb-10 tracking-tight"
               >
-                Explore Our <span className="text-[#c5a47e]">Comprehensive <br /> Interior Design</span> Services
+                Explore Our <span className="text-[#c5a47e]">Comprehensive <br className="hidden sm:block" /> Interior Design</span> Services
               </motion.h2>
               
               <motion.p 

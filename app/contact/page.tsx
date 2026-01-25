@@ -88,7 +88,7 @@ export default function ContactPage() {
               <motion.h2 
                 {...fadeIn}
                 transition={{ delay: 0.1 }}
-                className="text-5xl md:text-7xl font-bold leading-[1.1] text-zinc-900 mb-20 tracking-tight"
+                className="text-4xl sm:text-5xl md:text-[60px] font-bold leading-[1.1] text-zinc-900 mb-20 tracking-tight"
               >
                 Have A Project In <span className="text-[#c5a47e]">Mind?</span> Let&apos;s <br />
                 <span className="text-[#c5a47e]">Make</span> It Happen

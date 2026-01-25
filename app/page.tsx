@@ -112,7 +112,7 @@ export default function LandingPage() {
               <motion.h2 
                 {...fadeIn}
                 transition={{ delay: 0.1 }}
-                className="text-5xl md:text-7xl font-bold leading-tight text-zinc-900"
+                className="text-4xl sm:text-5xl md:text-[60px] font-bold leading-[1.1] text-zinc-900 tracking-tight"
               >
                 Experience <span className="text-[#c5a47e]">The Art Of Interior Design</span>
               </motion.h2>
@@ -201,7 +201,7 @@ export default function LandingPage() {
               <motion.h2 
                 {...fadeIn}
                 transition={{ delay: 0.1 }}
-                className="text-3xl sm:text-5xl md:text-7xl font-bold leading-tight text-zinc-900"
+                className="text-4xl sm:text-5xl md:text-[60px] font-bold leading-[1.1] text-zinc-900 tracking-tight"
               >
                 Explore Our <span className="text-[#c5a47e]">Comprehensive <br className="hidden sm:block" /> Interior Design</span> Services
               </motion.h2>
@@ -313,9 +313,9 @@ export default function LandingPage() {
                 </span>
               </div>
 
-              <h2 className="mb-10 text-5xl md:text-7xl font-bold leading-[1.1] text-white">
-                Where Spaces <br />
-                Inspire, And <span className="text-[#c5a47e]">Design</span> <br />
+              <h2 className="mb-10 text-4xl sm:text-5xl md:text-[60px] font-bold leading-[1.1] text-white tracking-tight">
+                Where Spaces <br className="hidden sm:block" />
+                Inspire, And <span className="text-[#c5a47e]">Design</span> <br className="hidden sm:block" />
                 Comes Alive
               </h2>
 
@@ -451,7 +451,7 @@ export default function LandingPage() {
               <motion.h2 
                 {...fadeIn}
                 transition={{ delay: 0.1 }}
-                className="text-3xl md:text-6xl font-bold leading-[1.05] text-zinc-900 tracking-tight"
+                className="text-4xl sm:text-5xl md:text-[60px] font-bold leading-[1.1] text-zinc-900 tracking-tight"
               >
                 Description <span className="text-[#c5a47e]">Architecture</span> <br /> 
                 <span className="text-[#c5a47e]">Process</span> For Exceptional <br /> 
@@ -577,7 +577,7 @@ export default function LandingPage() {
             <motion.h2 
               {...fadeIn}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-5xl font-bold leading-[1.1] text-zinc-900 mb-10 tracking-tight"
+              className="text-4xl sm:text-5xl md:text-[60px] font-bold leading-[1.1] text-zinc-900 mb-10 tracking-tight"
             >
               Creative <span className="text-[#c5a47e]">Projects That</span> <br /> 
               <span className="text-[#c5a47e]">Define</span> Our Style
@@ -702,8 +702,8 @@ export default function LandingPage() {
           >
             <div className="relative z-10 flex flex-col items-center">
               <Star className="text-zinc-500 mb-6" fill="currentColor" size={32} />
-              <h2 className="mb-6 max-w-3xl text-5xl font-bold md:text-7xl leading-tight">
-                Unlock Your Dream <br /> Home Today!
+              <h2 className="mb-6 max-w-3xl text-4xl sm:text-5xl md:text-[60px] font-bold leading-[1.1] tracking-tight">
+                Unlock Your Dream <br className="hidden sm:block" /> Home Today!
               </h2>
               <p className="mb-10 max-w-xl text-lg text-zinc-400">
                 Ready to transform your living space? Join over 500+ happy homeowners 

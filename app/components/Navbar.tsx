@@ -41,7 +41,7 @@ export function Navbar() {
           <Image
             src={logo}
             alt="Antra Logo"
-            className="h-30 w-auto object-contain"
+            className="h-16 md:h-24 lg:h-30 w-auto object-contain transition-all"
             priority
           />
         </Link>
@@ -82,43 +82,51 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <button 
-          className="block lg:hidden text-white"
+          className="block lg:hidden text-white p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          {mobileMenuOpen ? <X size={30} /> : <Menu size={30} />}
+          {mobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 top-[88px] z-[60] bg-zinc-900 p-6 flex flex-col h-screen lg:hidden overflow-y-auto">
-          <div className="flex flex-col gap-6">
+        <div className="fixed inset-0 z-[60] bg-[#111111] p-8 flex flex-col lg:hidden overflow-y-auto pt-32">
+          {/* Close button inside the menu to ensure it's always accessible and matches the screenshot position */}
+          <button 
+            className="absolute top-10 right-8 text-white"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <X size={32} />
+          </button>
+
+          <div className="flex flex-col gap-8">
             {navLinks.map((link) => (
               <Link 
                 key={link.name} 
                 href={link.href} 
                 onClick={() => setMobileMenuOpen(false)}
                 className={cn(
-                  "text-2xl font-bold uppercase tracking-wider text-white flex justify-between items-center border-b border-white/10 pb-4",
-                  pathname === link.href && "text-[#c5a47e]"
+                  "text-3xl font-bold uppercase tracking-widest flex justify-between items-center border-b border-white/5 pb-6",
+                  pathname === link.href ? "text-[#c5a47e]" : "text-white"
                 )}
               >
                 {link.name}
-                {link.hasDropdown && <ChevronDown size={20} />}
+                {link.hasDropdown && <ChevronDown size={24} className="opacity-50" />}
               </Link>
             ))}
             
-            <div className="mt-8 flex flex-col gap-6">
-              <div className="flex items-center gap-3 text-white">
-                <div className="h-12 w-12 rounded-full border border-white/20 flex items-center justify-center">
-                  <PhoneCall size={20} className="text-[#c5a47e]" />
+            <div className="mt-12 flex flex-col gap-10">
+              <div className="flex items-center gap-5 text-white">
+                <div className="h-16 w-16 rounded-full border border-white/10 flex items-center justify-center">
+                  <PhoneCall size={28} className="text-[#c5a47e]" />
                 </div>
                 <div>
-                  <p className="text-xs text-zinc-400 font-bold uppercase tracking-widest">Call Us Phone</p>
-                  <p className="text-lg font-bold">(+480) 123 678 900</p>
+                  <p className="text-xs text-zinc-500 font-black uppercase tracking-[0.2em] mb-1">Call Us Phone</p>
+                  <p className="text-xl font-bold">(+480) 123 678 900</p>
                 </div>
               </div>
-              <Link href="/contact" className="w-full text-center rounded-full bg-[#c5a47e] py-6 text-sm font-bold uppercase tracking-widest text-zinc-900">
+              <Link href="/contact" className="w-full text-center rounded-full bg-[#c5a47e] py-7 text-xs font-black uppercase tracking-[0.3em] text-zinc-900 shadow-xl">
                 Get A Quote!
               </Link>
             </div>
