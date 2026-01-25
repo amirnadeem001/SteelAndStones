@@ -309,7 +309,7 @@ export default function LandingPage() {
               <div className="mb-8 flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 w-fit">
                 <div className="h-1.5 w-1.5 rounded-full bg-orange-500" />
                 <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white">
-                  Started in 1991
+                  Started in 2013
                 </span>
               </div>
 
