@@ -1,55 +1,102 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import logo from "../../public/logo.png";
+import { motion } from "framer-motion";
 
 export function Footer() {
+  const fadeIn = {
+    initial: { opacity: 0, y: 20 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.6 }
+  };
+
   return (
-    <footer className="bg-white pt-24 pb-12 border-t border-zinc-100">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
-          <div className="col-span-1 md:col-span-1">
+    <footer className="relative bg-[#1a1a1a] text-white pt-24 pb-12 overflow-hidden">
+      {/* Subtle Background Image Overlay */}
+      <div className="absolute inset-0 z-0 opacity-10">
+        <Image
+          src="/hero.png"
+          alt="Footer Background"
+          fill
+          className="object-cover"
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
+          {/* Logo and Address */}
+          <div className="flex flex-col">
             <Link href="/" className="flex items-center gap-2 mb-8">
-              <div className="h-8 w-8 bg-zinc-900 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xs">A</span>
-              </div>
-              <span className="text-xl font-bold tracking-tighter uppercase">Antra</span>
+              <Image
+                src={logo}
+                alt="Antra Logo"
+                className="h-30 w-auto object-contain"
+              />
             </Link>
-            <p className="text-zinc-500 leading-relaxed mb-8">
-              Elevating spaces through thoughtful design and architectural excellence. 
-              Based in New York, working worldwide.
+            
+            <p className="text-lg font-bold mb-8 leading-tight max-w-[250px]">
+              We Transform Your Vision Into Beautifully Crafted Spaces.
             </p>
-            <div className="flex gap-4">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="h-10 w-10 rounded-full bg-zinc-50 flex items-center justify-center hover:bg-zinc-100 cursor-pointer transition-colors">
-                  <span className="text-xs text-zinc-400">#</span>
+            
+            <address className="not-italic text-sm text-zinc-400 leading-relaxed font-medium">
+              5609 E Sprague Ave, Spokane Valley,<br />
+              WA 99212, USA
+            </address>
+          </div>
+
+          {/* Quick Links Column 1 */}
+          <div className="grid grid-cols-1 gap-4">
+            {[
+              "About Us", "Services", "Careers", "Our Team", "Blog", "Contact Us"
+            ].map((link, idx) => (
+              <Link key={idx} href="#" className="text-[15px] font-bold tracking-tight hover:text-[#c5a47e] transition-colors leading-none">
+                {link}
+              </Link>
+            ))}
+          </div>
+
+          {/* Quick Links Column 2 */}
+          <div className="grid grid-cols-1 gap-4">
+            {[
+              "Our Projects", "Partners", "Partners Program", "Affiliate Program", "Terms & Conditions", "Support Center"
+            ].map((link, idx) => (
+              <Link key={idx} href="#" className="text-[15px] font-bold tracking-tight hover:text-[#c5a47e] transition-colors leading-none">
+                {link}
+              </Link>
+            ))}
+          </div>
+
+          {/* Contact Info and Socials */}
+          <div className="flex flex-col lg:items-end lg:text-right">
+            <a href="tel:+0844560789" className="text-3xl font-bold text-[#c5a47e] mb-2 underline underline-offset-[12px] decoration-1 decoration-[#c5a47e]/30 hover:decoration-[#c5a47e] transition-all">
+              +(084) 456-0789
+            </a>
+            <a href="mailto:Support@example.com" className="text-2xl font-bold mb-12 hover:text-[#c5a47e] transition-colors">
+              Support@example.com
+            </a>
+
+            <div className="flex gap-4 text-sm font-bold tracking-tight text-white/90">
+              {["Facebook", "Instagram", "YouTube", "Twitter"].map((social, idx, arr) => (
+                <div key={idx} className="flex items-center gap-4">
+                  <Link href="#" className="hover:text-[#c5a47e] transition-colors">
+                    {social}
+                  </Link>
+                  {idx < arr.length - 1 && <span className="text-white/20">-</span>}
                 </div>
               ))}
             </div>
           </div>
-
-          {[
-            { title: "Sitemap", links: ["Home", "Services", "Projects", "About", "Contact"] },
-            { title: "Services", links: ["Residential", "Commercial", "Space Planning", "Custom Furniture", "Architecture"] },
-            { title: "Contact", links: ["Inquiries", "Careers", "Office Locations", "Press", "Partners"] },
-          ].map((section, idx) => (
-            <div key={idx}>
-              <h4 className="font-bold mb-8">{section.title}</h4>
-              <ul className="space-y-4">
-                {section.links.map((link) => (
-                  <li key={link}>
-                    <Link href={`/${link.toLowerCase()}`} className="text-zinc-500 hover:text-zinc-900 transition-colors">{link}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-between pt-12 border-t border-zinc-50">
-          <p className="text-sm text-zinc-400">&copy; 2024 Antra Design Studio. All rights reserved.</p>
-          <div className="flex gap-8 mt-4 md:mt-0">
-            <Link href="/privacy" className="text-sm text-zinc-400 hover:text-zinc-900">Privacy Policy</Link>
-            <Link href="/terms" className="text-sm text-zinc-400 hover:text-zinc-900">Terms of Service</Link>
+        {/* Bottom Bar */}
+        <div className="pt-12 border-t border-white/10 flex flex-col md:row items-center justify-between gap-6 text-sm text-zinc-500 font-medium">
+          <p>© 2026 Antra Studio. All rights reserved.</p>
+          <div className="flex gap-8">
+            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

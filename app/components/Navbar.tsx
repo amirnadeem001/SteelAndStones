@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import logo from "../../public/logo.png";
 import { usePathname } from "next/navigation";
 import { Menu, X, PhoneCall, Search, LayoutGrid, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -10,8 +12,6 @@ const navLinks = [
   { name: "Home", href: "/", hasDropdown: true },
   { name: "Services", href: "/services", hasDropdown: true },
   { name: "Projects", href: "/projects", hasDropdown: true },
-  { name: "Pages", href: "#", hasDropdown: true },
-  { name: "Blog", href: "#", hasDropdown: true },
   { name: "Contact Us", href: "/contact" },
 ];
 
@@ -35,13 +35,15 @@ export function Navbar() {
         isScrolled || mobileMenuOpen ? "bg-zinc-900/95 backdrop-blur-md shadow-lg" : "bg-transparent"
       )}
     >
-      <div className="mx-auto flex max-w-[1600px] items-center justify-between">
+      <div className="mx-auto flex max-w-[2600px] items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="relative h-8 w-8 bg-[#c5a47e] rotate-45 flex items-center justify-center transition-transform group-hover:rotate-[135deg]">
-            <span className="text-zinc-900 font-black text-xs -rotate-45">A</span>
-          </div>
-          <span className="text-2xl font-bold tracking-tighter text-white uppercase">Antra</span>
+          <Image
+            src={logo}
+            alt="Antra Logo"
+            className="h-30 w-auto object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop Links */}
@@ -56,7 +58,6 @@ export function Navbar() {
               )}
             >
               {link.name}
-              {link.hasDropdown && <ChevronDown size={14} className="opacity-50" />}
             </Link>
           ))}
         </div>
@@ -77,14 +78,6 @@ export function Navbar() {
             Get A Quote!
           </Link>
 
-          <div className="flex items-center gap-4 text-white">
-            <button className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
-              <Search size={18} />
-            </button>
-            <button className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
-              <LayoutGrid size={18} />
-            </button>
-          </div>
         </div>
 
         {/* Mobile Toggle */}

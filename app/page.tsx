@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import logo from "../public/logo.png";
 import { motion } from "framer-motion";
 import { 
   ArrowRight, 
@@ -721,102 +722,6 @@ export default function LandingPage() {
           </motion.div>
         </div>
       </section>
-      {/* Footer Section */}
-      <footer className="relative bg-[#1a1a1a] text-white pt-24 pb-12 overflow-hidden">
-        {/* Subtle Background Image Overlay */}
-        <div className="absolute inset-0 z-0 opacity-10">
-          <Image
-            src="/hero.png"
-            alt="Footer Background"
-            fill
-            className="object-cover"
-          />
-        </div>
-
-        <div className="relative z-10 mx-auto max-w-7xl px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
-            {/* Logo and Address */}
-            <div className="flex flex-col">
-              <div className="flex items-center gap-2 mb-8">
-                <div className="relative h-8 w-8">
-                  {/* Custom SVG Logo matching the stacked boxes */}
-                  <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-[#c5a47e]">
-                    <path d="M5 15L20 5L35 15L20 25L5 15Z" fill="currentColor" fillOpacity="0.4" />
-                    <path d="M5 25L20 15L35 25L20 35L5 25Z" fill="currentColor" />
-                  </svg>
-                </div>
-                <span className="text-3xl font-bold tracking-tighter">antra</span>
-              </div>
-              
-              <p className="text-lg font-bold mb-8 leading-tight max-w-[250px]">
-                We Transform Your Vision Into Beautifully Crafted Spaces.
-              </p>
-              
-              <address className="not-italic text-sm text-zinc-400 leading-relaxed font-medium">
-                5609 E Sprague Ave, Spokane Valley,<br />
-                WA 99212, USA
-              </address>
-            </div>
-
-            {/* Quick Links Column 1 */}
-            <div className="grid grid-cols-1 gap-4">
-              {[
-                "About Us", "Services", "Careers", "Our Team", "Blog", "Contact Us"
-              ].map((link, idx) => (
-                <Link key={idx} href="#" className="text-[15px] font-bold tracking-tight hover:text-[#c5a47e] transition-colors leading-none">
-                  {link}
-                </Link>
-              ))}
-            </div>
-
-            {/* Quick Links Column 2 */}
-            <div className="grid grid-cols-1 gap-4">
-              {[
-                "Our Projects", "Partners", "Partners Program", "Affiliate Program", "Terms & Conditions", "Support Center"
-              ].map((link, idx) => (
-                <Link key={idx} href="#" className="text-[15px] font-bold tracking-tight hover:text-[#c5a47e] transition-colors leading-none">
-                  {link}
-                </Link>
-              ))}
-            </div>
-
-            {/* Contact Info and Socials */}
-            <div className="flex flex-col lg:items-end lg:text-right">
-              <a href="tel:+0844560789" className="text-3xl font-bold text-[#c5a47e] mb-2 underline underline-offset-[12px] decoration-1 decoration-[#c5a47e]/30 hover:decoration-[#c5a47e] transition-all">
-                +(084) 456-0789
-              </a>
-              <a href="mailto:Support@example.com" className="text-2xl font-bold mb-12 hover:text-[#c5a47e] transition-colors">
-                Support@example.com
-              </a>
-
-              <div className="flex gap-4 text-sm font-bold tracking-tight text-white/90">
-                {["Facebook", "Instagram", "YouTube", "Twitter"].map((social, idx, arr) => (
-                  <div key={idx} className="flex items-center gap-4">
-                    <Link href="#" className="hover:text-[#c5a47e] transition-colors">
-                      {social}
-                    </Link>
-                    {idx < arr.length - 1 && <span className="text-white/20">-</span>}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Copyright and Bottom Area */}
-          <div className="pt-12 border-t border-white/5 flex flex-col items-center gap-8 md:flex-row md:justify-center relative">
-            <p className="text-sm font-medium text-zinc-500">
-              © Copyright 2025 <span className="text-[#c5a47e] font-bold">Antra</span>. All rights reserved.
-            </p>
-
-            <button 
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="md:absolute md:right-0 h-12 w-12 rounded-full bg-zinc-800 flex items-center justify-center hover:bg-[#c5a47e] transition-all group"
-            >
-              <ArrowRight size={20} className="-rotate-90 group-hover:text-zinc-950 transition-colors" />
-            </button>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

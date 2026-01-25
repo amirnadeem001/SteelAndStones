@@ -2,97 +2,198 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 const projects = [
-  { id: 1, title: "The Nordic Retreat", category: "Residential", image: "/gallery-1.png" },
-  { id: 2, title: "Modernist Haven", category: "Residential", image: "/gallery-2.png" },
-  { id: 3, title: "Artisan Loft", category: "Commercial", image: "/gallery-3.png" },
-  { id: 4, title: "Zen Sanctum", category: "Residential", image: "/hero.png" },
-  { id: 5, title: "Corporate Edge", category: "Commercial", image: "/modern-space.png" },
+  { 
+    id: "01", 
+    title: "Art Deco Revival", 
+    location: "Berlin, Germany",
+    year: "2025",
+    categories: ["RESIDENTIAL", "SINGLE HOME"],
+    image: "/gallery-1.png",
+    aspect: "aspect-[16/10]"
+  },
+  { 
+    id: "02", 
+    title: "Golden Ratio Residence", 
+    location: "Berlin, Germany",
+    year: "2025",
+    categories: ["SINGLE HOME"],
+    image: "/gallery-2.png",
+    aspect: "aspect-[16/12]"
+  },
+  { 
+    id: "03", 
+    title: "Nordic Minimalist Loft", 
+    location: "Berlin, Germany",
+    year: "2025",
+    categories: ["RESIDENTIAL"],
+    image: "/gallery-3.png",
+    aspect: "aspect-[16/10]"
+  },
+  { 
+    id: "04", 
+    title: "Industrial Elegance", 
+    location: "Berlin, Germany",
+    year: "2025",
+    categories: ["RESIDENTIAL"],
+    image: "/modern-space.png",
+    aspect: "aspect-[16/11]"
+  }
 ];
 
 export default function ProjectsPage() {
+  const fadeIn = {
+    initial: { opacity: 0, y: 20 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.6 }
+  };
+
   return (
-    <div className="pt-32 pb-24 min-h-screen bg-white">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
-          <div>
-            <motion.span 
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-sm font-bold uppercase tracking-widest text-zinc-400"
-            >
-              Portfolio
-            </motion.span>
-            <motion.h1 
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="mt-4 text-6xl font-bold"
-            >
-              Recent Projects
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="mt-6 text-zinc-500 max-w-md"
-            >
-              Highlighting our finest work from luxury apartments to serene countryside retreats.
-            </motion.p>
-          </div>
-          <div className="flex flex-wrap gap-4">
-            {["All", "Residential", "Commercial", "Hospitality"].map((filter, i) => (
-              <motion.button 
-                key={filter}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3 + (i * 0.1) }}
-                className={cn(
-                  "px-6 py-2 text-sm font-semibold rounded-full transition-all border",
-                  filter === "All" ? "bg-zinc-900 border-zinc-900 text-white" : "border-zinc-200 hover:border-zinc-900"
-                )}
-              >
-                {filter}
-              </motion.button>
-            ))}
-          </div>
+   <div className="relative min-h-screen bg-white text-zinc-900 overflow-x-hidden">
+      {/* Hero Section */}
+      <section className="relative h-[40vh] w-full flex items-center justify-center text-center">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/hero.png"
+            alt="Services Hero"
+            fill
+            className="object-cover brightness-[0.4]"
+            priority
+          />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, idx) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="group cursor-pointer"
+        <div className="relative z-10 px-6">
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-6xl font-bold text-white mb-6 uppercase tracking-tighter"
+          >
+            Recent Projects
+          </motion.h1>
+          
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className="flex items-center justify-center gap-3 text-sm font-bold uppercase tracking-widest text-white/70"
+          >
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <ChevronRight size={14} className="text-white/30" />
+            <span className="text-[#c5a47e]">RECENT PROJECTS</span>
+          </motion.div>
+        </div>
+      </section>
+      {/* Main Content */}
+      <section className="relative py-32 bg-white">
+        <div className="mx-auto max-w-7xl px-6">
+          {/* Section Header */}
+          <div className="flex flex-col items-center text-center mb-24">
+            <motion.div 
+              {...fadeIn}
+              className="mb-8 flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-4 py-1.5 w-fit shadow-sm"
             >
-              <div className="relative aspect-[3/4] overflow-hidden rounded-3xl">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                />
-                <div className="absolute inset-x-6 bottom-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                  <div className="p-6 bg-white rounded-2xl shadow-xl">
-                    <p className="text-xs font-bold uppercase tracking-wider text-zinc-400">{project.category}</p>
-                    <h4 className="mt-1 text-lg font-bold">{project.title}</h4>
-                    <div className="mt-4 flex items-center gap-2 text-sm font-semibold">
-                      View Project <ChevronRight size={16} />
-                    </div>
+              <div className="h-1.5 w-1.5 rounded-full bg-orange-500" />
+              <span className="text-[10px] font-black uppercase tracking-[0.25em] text-zinc-900">
+                Our Projects
+              </span>
+            </motion.div>
+            
+            <motion.h2 
+              {...fadeIn}
+              transition={{ delay: 0.1 }}
+              className="text-3xl md:text-5xl font-bold leading-[1.1] text-zinc-900 mb-10 tracking-tight"
+            >
+              Creative <span className="text-[#c5a47e]">Projects That</span> <br /> 
+              <span className="text-[#c5a47e]">Define</span> Our Style
+            </motion.h2>
+          </div>
+
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 gap-24">
+            {projects.map((project, idx) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="group flex flex-col"
+              >
+                <div className={cn(
+                  "relative w-full h-[600px] rounded-[2.5rem] overflow-hidden mb-12 shadow-sm transition-all duration-700 group-hover:shadow-3xl",
+                  project.aspect
+                )}>
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                  />
+                  
+                  {/* Category Badges on Top Left of Image */}
+                  <div className="absolute top-8 left-8 flex flex-wrap gap-2">
+                    {project.categories.map((cat, cIdx) => (
+                      <div key={cIdx} className="bg-black/20 backdrop-blur-md border border-white/30 px-4 py-1.5 rounded-full">
+                        <span className="text-[10px] font-black tracking-widest text-white uppercase">
+                          {cat}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Year Tag on Top Right */}
+                  <div className="absolute top-8 right-8">
+                    <span className="text-sm font-bold text-white/50">{project.year}</span>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 px-4">
+                  <div>
+                    <h3 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-2 tracking-tight group-hover:text-[#c5a47e] transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-lg text-zinc-400 font-medium">{project.location}</p>
+                  </div>
+                  
+                  <Link href={`/projects/${project.id}`} className="group/link flex items-center gap-4">
+                    <span className="text-sm font-black uppercase tracking-widest text-zinc-900">View Project</span>
+                    <div className="h-12 w-12 rounded-full border border-zinc-200 flex items-center justify-center group-hover/link:bg-zinc-900 group-hover/link:border-zinc-900 transition-all">
+                      <ArrowRight size={20} className="group-hover/link:text-white transition-colors" />
+                    </div>
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Load More Button */}
+          <div className="mt-32 flex justify-center">
+            <button className="flex items-center gap-4 rounded-full border-2 border-zinc-900 px-12 py-5 font-black uppercase tracking-widest text-zinc-900 hover:bg-zinc-900 hover:text-white transition-all">
+              Load More Projects
+            </button>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 bg-zinc-950 text-white">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+            <div className="max-w-2xl text-center md:text-left">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Have a project in mind?</h2>
+              <p className="text-xl text-zinc-400">Let&apos;s build something extraordinary together.</p>
+            </div>
+            <Link href="/contact" className="rounded-full bg-[#c5a47e] px-12 py-6 text-sm font-black uppercase tracking-widest text-zinc-950 hover:bg-white transition-all">
+              Start Conversation
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
