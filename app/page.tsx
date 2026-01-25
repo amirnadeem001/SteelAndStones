@@ -248,7 +248,7 @@ export default function LandingPage() {
               {[
                 { id: "01", title: "Woodwork & Carpentry", active: true },
                 { id: "02", title: "Premium Flooring" },
-                { id: "03", title: "Ceiling Design (سقف)" },
+                { id: "03", title: "Ceiling Design" },
                 { id: "04", title: "Wall Finishes" },
                 { id: "05", title: "Lighting Solutions" },
                 { id: "06", title: "Full Interior Renovation" }

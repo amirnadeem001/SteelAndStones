@@ -21,7 +21,7 @@ const services = [
   },
   { 
     id: "03", 
-    title: "Ceiling (سقف)", 
+    title: "Ceiling", 
     desc: "Expert design and finishing of false ceilings, gypsum ceilings, and POP ceilings tailored to your interior style.",
     image: "/gallery-3.png"
   },
