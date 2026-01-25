@@ -71,17 +71,17 @@ export function Footer() {
 
           {/* Contact Info and Socials */}
           <div className="flex flex-col items-center lg:items-end lg:text-right col-span-1 lg:col-span-2">
-            <div className="flex flex-col lg:items-end mb-12">
-              <a href="tel:+0844560789" className="text-2xl font-bold text-[#c5a47e] mb-2 hover:text-white transition-all">
+            <div className="flex flex-col items-center lg:items-end mb-8 sm:mb-12 text-center lg:text-right">
+              <a href="tel:+0844560789" className="text-xl sm:text-2xl font-bold text-[#c5a47e] mb-2 hover:text-white transition-all">
                 +(084) 456-0789
               </a>
               <div className="h-[1px] w-32 bg-white/10 mb-4 hidden lg:block" />
-              <a href="mailto:Support@example.com" className="text-3xl font-bold text-white hover:text-[#c5a47e] transition-colors uppercase">
+              <a href="mailto:Support@example.com" className="text-xl sm:text-2xl md:text-3xl font-bold text-white hover:text-[#c5a47e] transition-colors uppercase break-all sm:break-normal">
                 Support@example.com
               </a>
             </div>
 
-            <div className="flex flex-wrap justify-center lg:justify-end gap-4 text-xs font-black uppercase tracking-[0.2em] text-white/90">
+            <div className="flex flex-wrap justify-center lg:justify-end gap-x-4 gap-y-3 text-[10px] sm:text-xs font-black uppercase tracking-[0.15em] sm:tracking-[0.2em] text-white/90">
               {["Facebook", "Instagram", "YouTube", "Twitter"].map((social, idx, arr) => (
                 <div key={idx} className="flex items-center gap-4">
                   <Link href="#" className="hover:text-[#c5a47e] transition-colors">

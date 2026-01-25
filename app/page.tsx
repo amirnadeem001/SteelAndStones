@@ -48,15 +48,15 @@ export default function LandingPage() {
             className="flex flex-col items-center"
           >
             {/* Badge */}
-            <div className="mb-8 flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 backdrop-blur-sm">
+            <div className="mb-6 flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 backdrop-blur-sm sm:mb-8">
               <div className="h-2 w-2 rounded-full bg-orange-500 animate-pulse" />
-              <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white">
+              <span className="text-[9px] font-black uppercase tracking-[0.2em] text-white sm:text-[10px] sm:tracking-[0.25em]">
                 Fast and Reliable
               </span>
             </div>
 
-            <h1 className="mb-8 text-6xl font-bold leading-[1.1] md:text-8xl lg:text-[110px] text-white tracking-tight">
-              Find Your Inspired <br />
+            <h1 className="mb-8 text-4xl font-bold leading-[1.1] sm:text-6xl md:text-8xl lg:text-[110px] text-white tracking-tight px-4">
+              Find Your Inspired <br className="hidden sm:block" />
               Interior Design
             </h1>
             
@@ -186,7 +186,7 @@ export default function LandingPage() {
       {/* Explore Our Services Section */}
       <section id="services" className="relative py-32 bg-white overflow-hidden">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-20 border-l border-zinc-100 pl-12">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-20 md:border-l md:border-zinc-100 md:pl-12">
             <div className="max-w-4xl">
               <motion.div 
                 {...fadeIn}
@@ -201,9 +201,9 @@ export default function LandingPage() {
               <motion.h2 
                 {...fadeIn}
                 transition={{ delay: 0.1 }}
-                className="text-5xl md:text-7xl font-bold leading-tight text-zinc-900"
+                className="text-3xl sm:text-5xl md:text-7xl font-bold leading-tight text-zinc-900"
               >
-                Explore Our <span className="text-[#c5a47e]">Comprehensive <br /> Interior Design</span> Services
+                Explore Our <span className="text-[#c5a47e]">Comprehensive <br className="hidden sm:block" /> Interior Design</span> Services
               </motion.h2>
             </div>
             
