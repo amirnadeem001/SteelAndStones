@@ -9,38 +9,38 @@ import { cn } from "@/lib/utils";
 const services = [
   { 
     id: "01", 
-    title: "Premium Woodwork & Cabinetry", 
-    desc: "Custom-made woodwork and high-end cabinetry that adds character and functionality to any space.",
+    title: "Lighting Solutions", 
+    desc: "Complete interior lighting installation including decorative lights, ceiling lights, and wall lights to enhance every corner of your space.",
     image: "/modern-space.png"
   },
   { 
     id: "02", 
-    title: "Expert Painting & Refinishing", 
-    desc: "Professional painting services with meticulous attention to detail and high-quality finishes.",
+    title: "Wall Finishes", 
+    desc: "Premium wall paneling, professional wallpaper installation, and bespoke decorative wall treatments for a sophisticated look.",
     image: "/service.png"
   },
   { 
     id: "03", 
-    title: "Flooring & Tiling", 
-    desc: "A wide range of premium flooring solutions, from hardwood to luxury tiles, installed with precision.",
+    title: "Ceiling (سقف)", 
+    desc: "Expert design and finishing of false ceilings, gypsum ceilings, and POP ceilings tailored to your interior style.",
     image: "/gallery-3.png"
   },
   { 
     id: "04", 
-    title: "Ceiling & Lighting Design", 
-    desc: "Innovative ceiling designs and integrated lighting solutions that transform the ambiance of your space.",
+    title: "Premium Flooring", 
+    desc: "Installation of high-quality tile, ceramic, porcelain, and wooden flooring, along with durable floor sheets and vinyl options.",
     image: "/gallery-2.png"
   },
   { 
     id: "05", 
-    title: "Electrical & Smart Home", 
-    desc: "Seamless electrical work and smart home integrations for modern, functional interiors.",
+    title: "Woodwork & Carpentry", 
+    desc: "Custom kitchen cabinets, wardrobes, wooden doors, panels, and complete bespoke wooden interior work crafted with precision.",
     image: "/gallery-1.png"
   },
   { 
     id: "06", 
     title: "Full Interior Renovation", 
-    desc: "Comprehensive solutions handling every aspect from structural changes to the final decorative touches.",
+    desc: "A comprehensive approach to transforming your home or office, integrating all our specialized services for a flawless finish.",
     image: "/hero.png"
   }
 ];

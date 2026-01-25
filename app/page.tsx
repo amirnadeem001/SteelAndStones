@@ -163,7 +163,7 @@ export default function LandingPage() {
                 className="group relative bg-white p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.04)] border border-zinc-100 hover:shadow-xl transition-all duration-500"
               >
                 <div className="flex justify-between items-start mb-8">
-                  <h3 className="text-2xl font-bold leading-tight text-zinc-900 max-w-[150px]">
+                  <h3 className="text-2xl font-bold leading-tight text-zinc-900 max-w-[153px]">
                     {service.title}
                   </h3>
                   {/* Mocking the geometric icon with simple div circles/lines for that architectural feel */}
@@ -246,12 +246,12 @@ export default function LandingPage() {
 
             <div className="flex flex-col">
               {[
-                { id: "01", title: "Residential Interior Design", active: true },
-                { id: "02", title: "Outdoor & Landscape Design" },
-                { id: "03", title: "Interior Design Consultation" },
-                { id: "04", title: "Commercial Interior Design" },
-                { id: "05", title: "Renovation And Remodeling" },
-                { id: "06", title: "Interior 2D/3D Layouts" }
+                { id: "01", title: "Woodwork & Carpentry", active: true },
+                { id: "02", title: "Premium Flooring" },
+                { id: "03", title: "Ceiling Design (سقف)" },
+                { id: "04", title: "Wall Finishes" },
+                { id: "05", title: "Lighting Solutions" },
+                { id: "06", title: "Full Interior Renovation" }
               ].map((service, idx) => (
                 <motion.div
                   key={service.id}
