@@ -48,37 +48,40 @@ export function Footer() {
           </div>
 
           {/* Quick Links Column 1 */}
-          <div className="grid grid-cols-1 gap-4">
-            {[
-              "About Us", "Services", "Careers", "Our Team", "Blog", "Contact Us"
-            ].map((link, idx) => (
-              <Link key={idx} href="#" className="text-[15px] font-bold tracking-tight hover:text-[#c5a47e] transition-colors leading-none">
-                {link}
-              </Link>
-            ))}
+          <div className="flex flex-col gap-6">
+            <h3 className="text-xl font-bold text-white tracking-tight">Company</h3>
+            <div className="flex flex-col gap-4">
+              {[
+                { name: "About Us", href: "/about" },
+                { name: "Our Projects", href: "/projects" },
+                { name: "Contact Us", href: "/contact" },
+                { name: "Services", href: "/services" },
+              ].map((link, idx) => (
+                <Link 
+                  key={idx} 
+                  href={link.href} 
+                  className="text-xl font-bold text-zinc-400 hover:text-[#c5a47e] transition-colors"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
           </div>
 
-          {/* Quick Links Column 2 */}
-          <div className="grid grid-cols-1 gap-4">
-            {[
-              "Our Projects", "Partners", "Partners Program", "Affiliate Program", "Terms & Conditions", "Support Center"
-            ].map((link, idx) => (
-              <Link key={idx} href="#" className="text-[15px] font-bold tracking-tight hover:text-[#c5a47e] transition-colors leading-none">
-                {link}
-              </Link>
-            ))}
-          </div>
 
           {/* Contact Info and Socials */}
-          <div className="flex flex-col lg:items-end lg:text-right">
-            <a href="tel:+0844560789" className="text-3xl font-bold text-[#c5a47e] mb-2 underline underline-offset-[12px] decoration-1 decoration-[#c5a47e]/30 hover:decoration-[#c5a47e] transition-all">
-              +(084) 456-0789
-            </a>
-            <a href="mailto:Support@example.com" className="text-2xl font-bold mb-12 hover:text-[#c5a47e] transition-colors">
-              Support@example.com
-            </a>
+          <div className="flex flex-col items-center lg:items-end lg:text-right col-span-1 lg:col-span-2">
+            <div className="flex flex-col lg:items-end mb-12">
+              <a href="tel:+0844560789" className="text-2xl font-bold text-[#c5a47e] mb-2 hover:text-white transition-all">
+                +(084) 456-0789
+              </a>
+              <div className="h-[1px] w-32 bg-white/10 mb-4 hidden lg:block" />
+              <a href="mailto:Support@example.com" className="text-3xl font-bold text-white hover:text-[#c5a47e] transition-colors uppercase">
+                Support@example.com
+              </a>
+            </div>
 
-            <div className="flex gap-4 text-sm font-bold tracking-tight text-white/90">
+            <div className="flex flex-wrap justify-center lg:justify-end gap-4 text-xs font-black uppercase tracking-[0.2em] text-white/90">
               {["Facebook", "Instagram", "YouTube", "Twitter"].map((social, idx, arr) => (
                 <div key={idx} className="flex items-center gap-4">
                   <Link href="#" className="hover:text-[#c5a47e] transition-colors">
