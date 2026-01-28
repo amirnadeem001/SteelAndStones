@@ -599,52 +599,50 @@ export default function LandingPage() {
           <div className="flex gap-10 pb-20 overflow-x-auto no-scrollbar snap-x snap-mandatory items-start">
             {[
               {
-                title: "Art Deco Revival",
-                location: "Berlin, Germany",
-                year: "2025",
-                categories: ["SINGLE HOME"],
-                image: "/gallery-1.png",
+                title: "Al Aziz Optics",
+                location: "Gujranwala, Pakistan",
+                year: "2026",
+                categories: ["Retail", "Signage"],
+                image: "/projects/Al%20Aziz%20Optics/WhatsApp%20Image%202026-01-25%20at%203.45.56%20PM.jpeg",
                 width: "min-w-[320px]",
                 aspect: "aspect-[1/1.1]"
               },
               {
-                title: "Golden Ratio Residence",
-                location: "Berlin, Germany",
-                year: "2025",
-                categories: ["SINGLE HOME"],
-                image: "/gallery-2.png",
+                title: "Bhutta Mobile",
+                location: "Gujranwala, Pakistan",
+                year: "2026",
+                categories: ["Commercial", "Identity"],
+                image: "/projects/Bhutta%20Mobile/WhatsApp%20Image%202026-01-25%20at%203.57.43%20PM.jpeg",
                 width: "min-w-[350px]",
                 aspect: "aspect-[1/1.2]",
                 mt: "mt-12"
               },
               {
-                title: "Nordic Minimalist Loft",
-                location: "Berlin, Germany",
-                year: "2025",
-                categories: ["RESIDENTIAL", "SINGLE HOME"],
-                image: "/gallery-3.png",
+                title: "Kashif Ali Mobiles",
+                location: "Gujranwala, Pakistan",
+                year: "2026",
+                categories: ["Shop Interior"],
+                image: "/projects/Kashif%20Ali%20Mobiles/WhatsApp%20Image%202026-01-25%20at%204.00.08%20PM.jpeg",
                 width: "min-w-[370px]",
                 aspect: "aspect-[1/1.1]"
               },
               {
-                title: "Industrial Elegance",
-                location: "Berlin, Germany",
-                year: "2025",
-                categories: ["RESIDENTIAL"],
-                image: "/modern-space.png",
+                title: "Samer Mehdi",
+                location: "Pakistan",
+                year: "2026",
+                categories: ["Corporate", "Branding"],
+                image: "/projects/Samer%20Mehdi/WhatsApp%20Image%202026-01-25%20at%204.00.07%20PM.jpeg",
                 width: "min-w-[300px]",
                 aspect: "aspect-[1/1.3]",
                 mt: "mt-8"
               }
-            ].map((project, idx) => (
-              <motion.div
+            ]
+.map((project, idx) => (
+              <Link
+                href={`/projects/${encodeURIComponent(project.title)}`}
                 key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: idx * 0.1 }}
                 className={cn(
-                  "flex flex-col snap-center group cursor-pointer",
+                  "flex flex-col snap-center group",
                   project.width,
                   project.mt
                 )}
@@ -686,7 +684,7 @@ export default function LandingPage() {
                     </span>
                   </div>
                 </div>
-              </motion.div>
+              </Link>
             ))}
           </div>
         </div>
