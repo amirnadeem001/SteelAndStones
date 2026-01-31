@@ -13,6 +13,20 @@ import {
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
+import step1 from "../public/how-works/step1.png";
+import step2 from "../public/how-works/step2.png";
+import step3 from "../public/how-works/step3.png";
+import step4 from "../public/how-works/step4.png";
+
+import service1 from "../public/images/woodwork.png";
+import service2 from "../public/images/flooring.png";
+import service3 from "../public/images/ceiling.png";
+import service4 from "../public/images/wall-finishes.png";
+import service5 from "../public/images/lighting.png";
+import service6 from "../public/images/renovation.png";
+
+import { useState } from "react";
+
 export default function LandingPage() {
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
@@ -20,6 +34,17 @@ export default function LandingPage() {
     viewport: { once: true },
     transition: { duration: 0.6 }
   };
+
+  const services = [
+    { id: "01", title: "Woodwork & Carpentry", image: service1, desc: "Premium woodwork and custom carpentry solutions for your home and office." },
+    { id: "02", title: "Premium Flooring", image: service2, desc: "High-quality flooring options including marble, wood, and luxury tiles." },
+    { id: "03", title: "Ceiling Design", image: service3, desc: "Modern and artistic ceiling designs that transform your space from above." },
+    { id: "04", title: "Wall Finishes", image: service4, desc: "Exquisite wall treatments, paints, and textures for a sophisticated look." },
+    { id: "05", title: "Lighting Solutions", image: service5, desc: "Durable and elegant lighting designs to brighten every corner perfectly." },
+    { id: "06", title: "Full Interior Renovation", image: service6, desc: "Complete end-to-end interior transformation handled by experts." }
+  ];
+
+  const [activeService, setActiveService] = useState(services[0]);
 
 
 
@@ -228,46 +253,38 @@ export default function LandingPage() {
               className="relative aspect-[4/3] rounded-[3rem] overflow-hidden"
             >
               <Image
-                src="/modern-space.png"
-                alt="Service Showcase"
+                src={activeService.image}
+                alt={activeService.title}
                 fill
                 className="object-cover transition-transform duration-700 hover:scale-105"
               />
-              <div className="absolute left-8 bottom-8 max-w-xs">
+              <div className="absolute left-8 bottom-8 right-8">
                 <div className="bg-zinc-900/80 backdrop-blur-md p-8 rounded-3xl border border-white/10">
                   <p className="text-sm font-medium text-white leading-relaxed">
-                    Tailored design services for private homes, 
-                    including room makeovers and complete 
-                    home transformations.
+                    {activeService.desc}
                   </p>
                 </div>
               </div>
             </motion.div>
 
             <div className="flex flex-col">
-              {[
-                { id: "01", title: "Woodwork & Carpentry", active: true },
-                { id: "02", title: "Premium Flooring" },
-                { id: "03", title: "Ceiling Design" },
-                { id: "04", title: "Wall Finishes" },
-                { id: "05", title: "Lighting Solutions" },
-                { id: "06", title: "Full Interior Renovation" }
-              ].map((service, idx) => (
+              {services.map((service, idx) => (
                 <motion.div
                   key={service.id}
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  onMouseEnter={() => setActiveService(service)}
                   className={cn(
                     "group flex items-center justify-between py-8 border-b border-zinc-100 cursor-pointer transition-all",
-                    service.active ? "text-[#c5a47e]" : "text-zinc-900 hover:text-[#c5a47e]"
+                    activeService.id === service.id ? "text-[#c5a47e]" : "text-zinc-900 hover:text-[#c5a47e]"
                   )}
                 >
                   <div className="flex items-center gap-8">
                     <span className={cn(
-                      "text-xs font-black tracking-widest",
-                      service.active ? "text-[#c5a47e]" : "text-zinc-300"
+                      "text-base font-black tracking-widest",
+                      activeService.id === service.id ? "text-[#c5a47e]" : "text-zinc-300"
                     )}>
                       {service.id}
                     </span>
@@ -278,9 +295,9 @@ export default function LandingPage() {
                   
                   <div className={cn(
                     "h-10 w-10 rounded-full flex items-center justify-center transition-all",
-                    service.active ? "bg-[#c5a47e] text-zinc-950" : "bg-zinc-50 text-zinc-900 group-hover:bg-[#c5a47e] group-hover:text-zinc-950"
+                    activeService.id === service.id ? "bg-[#c5a47e] text-zinc-950" : "bg-zinc-50 text-zinc-900 group-hover:bg-[#c5a47e] group-hover:text-zinc-950"
                   )}>
-                    <ArrowRight className={cn("rotate-[-45deg] transition-transform", !service.active && "group-hover:rotate-0")} size={20} />
+                    <ArrowRight className={cn("rotate-[-45deg] transition-transform", activeService.id !== service.id && "group-hover:rotate-0")} size={20} />
                   </div>
                 </motion.div>
               ))}
@@ -477,28 +494,28 @@ export default function LandingPage() {
                 number: "01",
                 title: "Initial Consultation",
                 desc: "We begin by understanding your vision, goals, and needs, followed by careful planning.",
-                image: "/gallery-1.png",
+                image: step1,
                 offset: "lg:mt-0"
               },
               {
                 number: "02",
                 title: "Design & Planning",
                 desc: "Our team creates detailed designs that reflect your requirements.",
-                image: "/gallery-2.png",
+                image: step2,
                 offset: "lg:mt-24"
               },
               {
                 number: "03",
                 title: "Implementation",
                 desc: "With carefully selected contractors, we manage every phase.",
-                image: "/gallery-3.png",
+                image: step3,
                 offset: "lg:mt-48"
               },
               {
                 number: "04",
                 title: "Project Handover",
                 desc: "Upon completion, we conduct a thorough review, making sure all details.",
-                image: "/modern-space.png",
+                image: step4,
                 offset: "lg:mt-72"
               }
             ].map((step, idx) => (

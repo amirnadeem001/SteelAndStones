@@ -6,42 +6,49 @@ import { ArrowRight, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
+import service1 from "../../public/images/woodwork.png";
+import service2 from "../../public/images/flooring.png";
+import service3 from "../../public/images/ceiling.png";
+import service4 from "../../public/images/wall-finishes.png";
+import service5 from "../../public/images/lighting.png";
+import service6 from "../../public/images/renovation.png";
+
 const services = [
   { 
     id: "01", 
-    title: "Lighting Solutions", 
-    desc: "Complete interior lighting installation including decorative lights, ceiling lights, and wall lights to enhance every corner of your space.",
-    image: "/modern-space.png"
+    title: "Woodwork & Carpentry", 
+    desc: "Premium woodwork and custom carpentry solutions for your home and office.",
+    image: service1
   },
   { 
     id: "02", 
-    title: "Wall Finishes", 
-    desc: "Premium wall paneling, professional wallpaper installation, and bespoke decorative wall treatments for a sophisticated look.",
-    image: "/service.png"
+    title: "Premium Flooring", 
+    desc: "High-quality flooring options including marble, wood, and luxury tiles.",
+    image: service2
   },
   { 
     id: "03", 
-    title: "Ceiling", 
-    desc: "Expert design and finishing of false ceilings, gypsum ceilings, and POP ceilings tailored to your interior style.",
-    image: "/gallery-3.png"
+    title: "Ceiling Design", 
+    desc: "Modern and artistic ceiling designs that transform your space from above.",
+    image: service3
   },
   { 
     id: "04", 
-    title: "Premium Flooring", 
-    desc: "Installation of high-quality tile, ceramic, porcelain, and wooden flooring, along with durable floor sheets and vinyl options.",
-    image: "/gallery-2.png"
+    title: "Wall Finishes", 
+    desc: "Exquisite wall treatments, paints, and textures for a sophisticated look.",
+    image: service4
   },
   { 
     id: "05", 
-    title: "Woodwork & Carpentry", 
-    desc: "Custom kitchen cabinets, wardrobes, wooden doors, panels, and complete bespoke wooden interior work crafted with precision.",
-    image: "/gallery-1.png"
+    title: "Lighting Solutions", 
+    desc: "Durable and elegant lighting designs to brighten every corner perfectly.",
+    image: service5
   },
   { 
     id: "06", 
     title: "Full Interior Renovation", 
-    desc: "A comprehensive approach to transforming your home or office, integrating all our specialized services for a flawless finish.",
-    image: "/hero.png"
+    desc: "Complete end-to-end interior transformation handled by experts.",
+    image: service6
   }
 ];
 
@@ -73,7 +80,7 @@ export default function ServicesPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-3xl md:text-6xl font-bold text-white mb-4 uppercase tracking-tighter"
           >
-            Services 01
+            Services
           </motion.h1>
           
           <motion.div 
@@ -84,7 +91,7 @@ export default function ServicesPage() {
           >
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <ChevronRight size={14} className="text-white/30" />
-            <span className="text-[#c5a47e]">SERVICES 01</span>
+            <span className="text-[#c5a47e]">SERVICES</span>
           </motion.div>
         </div>
       </section>
