@@ -79,7 +79,7 @@ export function Navbar() {
               </div>
               <div>
                 <p className="text-[10px] text-zinc-400 font-bold uppercase tracking-widest">Call Us Phone</p>
-                <p className="text-sm font-bold">(+480) 123 678 900</p>
+                <p className="text-sm font-bold">+92 334 3276139</p>
               </div>
             </div>
             
@@ -136,7 +136,7 @@ export function Navbar() {
                 </div>
                 <div>
                   <p className="text-[10px] text-zinc-500 font-black uppercase tracking-[0.2em] mb-1">Call Us Phone</p>
-                  <p className="text-xl font-bold">(+480) 123 678 900</p>
+                  <p className="text-xl font-bold">+92 334 3276139</p>
                 </div>
               </div>
               <Link 

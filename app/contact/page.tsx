@@ -114,8 +114,8 @@ export default function ContactPage() {
                 >
                   <h4 className="text-zinc-400 font-bold uppercase tracking-widest text-xs">Support:</h4>
                   <div className="space-y-2">
-                    <p className="text-[#c5a47e] text-lg font-bold">+(084) 456-0789</p>
-                    <p className="text-3xl font-bold truncate">Support@Example.Com</p>
+                    <p className="text-[#c5a47e] text-lg font-bold">+92 334 3276139</p>
+                    <p className="text-xl font-bold truncate">steelandstones@gmail.com</p>
                   </div>
                 </motion.div>
               </div>
