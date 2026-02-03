@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import logo from "../public/logo.png";
 import { motion } from "framer-motion";
 import { 
   ArrowRight, 
@@ -13,17 +12,17 @@ import {
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-import step1 from "../public/how-works/step1.png";
-import step2 from "../public/how-works/step2.png";
-import step3 from "../public/how-works/step3.png";
-import step4 from "../public/how-works/step4.png";
+const step1 = "/how-works/step1.png";
+const step2 = "/how-works/step2.png";
+const step3 = "/how-works/step3.png";
+const step4 = "/how-works/step4.png";
 
-import service1 from "../public/images/woodwork.png";
-import service2 from "../public/images/flooring.png";
-import service3 from "../public/images/ceiling.png";
-import service4 from "../public/images/wall-finishes.png";
-import service5 from "../public/images/lighting.png";
-import service6 from "../public/images/renovation.png";
+const service1 = "/images/woodwork.png";
+const service2 = "/images/flooring.png";
+const service3 = "/images/ceiling.png";
+const service4 = "/images/wall-finishes.png";
+const service5 = "/images/lighting.png";
+const service6 = "/images/renovation.png";
 
 import { useState } from "react";
 
@@ -102,6 +101,119 @@ export default function LandingPage() {
         </div>
 
        
+      </section>
+
+      {/* Brand Reviews / Video Section */}
+      <section className="relative py-24 bg-white">
+        <div className="mx-auto max-w-[1800px] px-6">
+          <motion.div 
+            {...fadeIn}
+            className="text-center mb-20"
+          >
+            <h2 className="text-4xl sm:text-5xl md:text-[60px] font-bold leading-[1.1] text-zinc-900 tracking-tight">
+              Design & Construct with <br />
+              <span className="text-[#c5a47e]">Steel & Stone Interiors</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+            {/* Video 1 */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative aspect-video rounded-[2.5rem] overflow-hidden shadow-2xl group cursor-pointer"
+            >
+              <video 
+                src="/Reviews/1.mp4" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                muted
+                loop
+                playsInline
+                preload="auto"
+                controls
+                onMouseOver={(e) => {
+                  const video = e.currentTarget as HTMLVideoElement;
+                  video.play().catch(err => console.log("Video play failed:", err));
+                }}
+                onMouseOut={(e) => {
+                  const video = e.currentTarget as HTMLVideoElement;
+                  video.pause();
+                }}
+              />
+              <div className="absolute inset-0 bg-black/30 flex items-center justify-center transition-all group-hover:opacity-0 pointer-events-none">
+                <div className="h-16 w-16 rounded-full border-2 border-white/50 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 group-hover:border-white transition-all">
+                  <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-white border-b-[8px] border-b-transparent ml-1" />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Video 2 */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative aspect-video rounded-[3rem] overflow-hidden shadow-2xl group cursor-pointer"
+            >
+              <video 
+                src="/Reviews/2.mp4" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                muted
+                loop
+                playsInline
+                preload="auto"
+                controls
+                onMouseOver={(e) => {
+                  const video = e.currentTarget as HTMLVideoElement;
+                  video.play().catch(err => console.log("Video play failed:", err));
+                }}
+                onMouseOut={(e) => {
+                  const video = e.currentTarget as HTMLVideoElement;
+                  video.pause();
+                }}
+              />
+              <div className="absolute inset-0 bg-black/30 flex items-center justify-center transition-all group-hover:opacity-0 pointer-events-none">
+                <div className="h-20 w-20 rounded-full border-2 border-white/50 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 group-hover:border-white transition-all">
+                  <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[16px] border-l-white border-b-[10px] border-b-transparent ml-1" />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Video 3 */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="relative aspect-video rounded-[2.5rem] overflow-hidden shadow-2xl group cursor-pointer"
+            >
+              <video 
+                src="/Reviews/3.mp4" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                muted
+                loop
+                playsInline
+                preload="auto"
+                controls
+                onMouseOver={(e) => {
+                  const video = e.currentTarget as HTMLVideoElement;
+                  video.play().catch(err => console.log("Video play failed:", err));
+                }}
+                onMouseOut={(e) => {
+                  const video = e.currentTarget as HTMLVideoElement;
+                  video.pause();
+                }}
+              />
+              <div className="absolute inset-0 bg-black/30 flex items-center justify-center transition-all group-hover:opacity-0 pointer-events-none">
+                <div className="h-16 w-16 rounded-full border-2 border-white/50 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 group-hover:border-white transition-all">
+                  <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-white border-b-[8px] border-b-transparent ml-1" />
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
       </section>
 
       {/* Who We Are / Experience Section */}

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -12,6 +13,45 @@ export default function ContactPage() {
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true },
     transition: { duration: 0.6 }
+  };
+
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({ name: "", phone: "", email: "", subject: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setStatus("error");
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   return (
@@ -144,37 +184,89 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <form className="space-y-8">
+              <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                   <div className="space-y-2.5">
                     <label className="text-[15px] font-bold text-zinc-900 ml-1">Full Name *</label>
-                    <input type="text" className="w-full bg-white border border-zinc-100 rounded-full py-4 px-8 focus:ring-2 focus:ring-[#c5a47e] outline-none transition-all font-medium text-zinc-500 shadow-sm" placeholder="Your Name *" />
+                    <input 
+                      type="text" 
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full bg-white border border-zinc-100 rounded-full py-4 px-8 focus:ring-2 focus:ring-[#c5a47e] outline-none transition-all font-medium text-zinc-500 shadow-sm" 
+                      placeholder="Your Name *" 
+                    />
                   </div>
                   <div className="space-y-2.5">
                     <label className="text-[15px] font-bold text-zinc-900 ml-1">Phone *</label>
-                    <input type="tel" className="w-full bg-white border border-zinc-100 rounded-full py-4 px-8 focus:ring-2 focus:ring-[#c5a47e] outline-none transition-all font-medium text-zinc-500 shadow-sm" placeholder="Phone" />
+                    <input 
+                      type="tel" 
+                      name="phone"
+                      required
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full bg-white border border-zinc-100 rounded-full py-4 px-8 focus:ring-2 focus:ring-[#c5a47e] outline-none transition-all font-medium text-zinc-500 shadow-sm" 
+                      placeholder="Phone" 
+                    />
                   </div>
                   <div className="space-y-2.5">
                     <label className="text-[15px] font-bold text-zinc-900 ml-1">Email Address *</label>
-                    <input type="email" className="w-full bg-white border border-zinc-100 rounded-full py-4 px-8 focus:ring-2 focus:ring-[#c5a47e] outline-none transition-all font-medium text-zinc-500 shadow-sm" placeholder="Email Address *" />
+                    <input 
+                      type="email" 
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full bg-white border border-zinc-100 rounded-full py-4 px-8 focus:ring-2 focus:ring-[#c5a47e] outline-none transition-all font-medium text-zinc-500 shadow-sm" 
+                      placeholder="Email Address *" 
+                    />
                   </div>
                   <div className="space-y-2.5">
                     <label className="text-[15px] font-bold text-zinc-900 ml-1">Subject *</label>
-                    <input type="text" className="w-full bg-white border border-zinc-100 rounded-full py-4 px-8 focus:ring-2 focus:ring-[#c5a47e] outline-none transition-all font-medium text-zinc-500 shadow-sm" placeholder="I Want To" />
+                    <input 
+                      type="text" 
+                      name="subject"
+                      required
+                      value={formData.subject}
+                      onChange={handleChange}
+                      className="w-full bg-white border border-zinc-100 rounded-full py-4 px-8 focus:ring-2 focus:ring-[#c5a47e] outline-none transition-all font-medium text-zinc-500 shadow-sm" 
+                      placeholder="I Want To" 
+                    />
                   </div>
                 </div>
                 
                 <div className="space-y-2.5">
                   <label className="text-[15px] font-bold text-zinc-900 ml-1">Your Message *</label>
-                  <textarea className="w-full bg-white border border-zinc-100 rounded-[2rem] p-8 focus:ring-2 focus:ring-[#c5a47e] outline-none transition-all h-48 font-medium text-zinc-500 shadow-sm resize-none" placeholder="Your Message.."></textarea>
+                  <textarea 
+                    name="message"
+                    required
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full bg-white border border-zinc-100 rounded-[2rem] p-8 focus:ring-2 focus:ring-[#c5a47e] outline-none transition-all h-48 font-medium text-zinc-500 shadow-sm resize-none" 
+                    placeholder="Your Message.."
+                  ></textarea>
                 </div>
 
-                <button className="w-fit bg-zinc-900 text-white font-bold py-5 px-12 rounded-full flex items-center justify-center gap-3 hover:bg-[#c5a47e] hover:text-zinc-900 transition-all group">
-                  Send Message 
-                  <Send size={18} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                </button>
+                <div className="flex flex-col gap-4">
+                  <button 
+                    disabled={status === "loading"}
+                    className="w-fit bg-zinc-900 text-white font-bold py-5 px-12 rounded-full flex items-center justify-center gap-3 hover:bg-[#c5a47e] hover:text-zinc-900 transition-all group disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {status === "loading" ? "Sending..." : "Send Message"} 
+                    <Send size={18} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  </button>
+
+                  {status === "success" && (
+                    <p className="text-green-600 font-bold ml-1">Message sent successfully!</p>
+                  )}
+                  {status === "error" && (
+                    <p className="text-red-600 font-bold ml-1">Something went wrong. Please try again.</p>
+                  )}
+                </div>
               </form>
             </motion.div>
+
           </div>
         </div>
       </section>
