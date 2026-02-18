@@ -73,11 +73,11 @@ export function Footer() {
           <div className="flex flex-col items-center lg:items-end lg:text-right col-span-1 lg:col-span-2">
             <div className="flex flex-col items-center lg:items-end mb-8 sm:mb-12 text-center lg:text-right">
               <a href="tel:+0844560789" className="text-xl sm:text-2xl font-bold text-[#c5a47e] mb-2 hover:text-white transition-all">
-                +92 334 3276139
+                +92 302 0007964
               </a>
               <div className="h-[1px] w-32 bg-white/10 mb-4 hidden lg:block" />
-              <a href="mailto:steelandstones@gmail.com" className="text-xl sm:text-xl md:text-xl font-bold text-white hover:text-[#c5a47e] transition-colors uppercase break-all sm:break-normal">
-                steelandstones@gmail.com
+              <a href="mailto:steelandstonesinterior@gmail.com" className="text-xl sm:text-xl md:text-xl font-bold text-white hover:text-[#c5a47e] transition-colors uppercase break-all sm:break-normal">
+                steelandstonesinterior@gmail.com
               </a>
             </div>
 
