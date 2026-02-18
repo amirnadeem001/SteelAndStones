@@ -23,7 +23,11 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "Steel & Stone Interiors | Luxury Interior Design Studio",
   description: "Bespoke interior design services blending strength and elegance for residential and commercial spaces.",
+  verification: {
+    google: "QetgR65KUQb1KF8sW4UUnpHt8wvRRaUV8Lp",
+  },
 };
+
 
 export default function RootLayout({
   children,
