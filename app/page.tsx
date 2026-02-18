@@ -26,6 +26,8 @@ const service6 = "/images/renovation.png";
 
 import { useState } from "react";
 
+// TODO: Add contact form functionality
+
 export default function LandingPage() {
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
